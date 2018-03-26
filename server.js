@@ -11,10 +11,13 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(function (req, res, next) {
+  console.log('REQ BODY', req.body);
+  next();
+});
+
 MongoClient.connect(db.url, (err, database) => {
     if (err) return console.log(err)
-    require('./app/routes')(app, database);
-
     database = database.db("storage-api")
     require('./app/routes')(app, database);
 
@@ -22,3 +25,4 @@ MongoClient.connect(db.url, (err, database) => {
       console.log('We are live on ' + port);
     });               
 });
+
