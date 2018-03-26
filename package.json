@@ -1,0 +1,20 @@
+{
+  "name": "storageapi",
+  "version": "1.0.0",
+  "description": "Storage API for CIT 261 Project",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Adrian Lane",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongodb": "^2.2.16"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}
