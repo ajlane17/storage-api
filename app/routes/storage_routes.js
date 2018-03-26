@@ -9,12 +9,12 @@ module.exports = function(app, db) {
         app.put('/storage/:id', (req, res) => {
             const id = req.params.id;
             const details = { '_id': new ObjectID(id) };
-            const note = { text: req.body.body, title: req.body.title };
-            db.collection('storage').update(details, note, (err, result) => {
+            const storage = { text: req.body.body, title: req.body.title };
+            db.collection('storage').update(details, storage, (err, result) => {
                 if (err) {
                     res.send({'error':'An error has occurred'});
                 } else {
-                    res.send(note);
+                    res.send(storage);
                 } 
             });
         });
@@ -26,7 +26,7 @@ module.exports = function(app, db) {
                 if (err) {
                     res.send({'error':'An error has occurred'});
                 } else {
-                    res.send('Note ' + id + ' deleted!');
+                    res.send('Storage ' + id + ' deleted!');
                 } 
             });
         });
@@ -54,8 +54,8 @@ module.exports = function(app, db) {
         });
         // create a record
         app.post('/storage', (req, res) => {
-            const note = { text: req.body.body, title: req.body.title };
-            db.collection('storage').insert(note, (err, result) => {
+            const storage = { text: req.body.body, title: req.body.title };
+            db.collection('storage').insert(storage, (err, result) => {
                 if (err) { 
                     res.send({ 'error': 'An error has occurred' }); 
                 } else {
