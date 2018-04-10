@@ -11,8 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
-    "mongodb": "^2.2.16"
+    "mongodb": "^2.2.16",
+    "npm": "^5.8.0"
   },
   "devDependencies": {
     "nodemon": "^1.17.2"
